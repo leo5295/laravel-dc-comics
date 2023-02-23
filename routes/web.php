@@ -22,7 +22,8 @@ use App\Models\Comic;
 //     return view('home', compact('series', 'links'));
 // });
 
-// Route::get('/', [ComicController::class, 'index'])->name('home');
+Route::get('/home', [ComicController::class, 'index'])->name('home');
+
 // Route::resource('home', ComicController::class);
 
 Route::get('/', [PagesController::class, 'getHome'])->name('homepage');
