@@ -21,6 +21,9 @@ use App\Http\Controllers\ComicController as ComicController;
 // });
 
 Route::get('/', [ComicController::class, 'index'])->name('home');
+// Route::resource('home', ComicController::class);
+
+
 
 Route::get('/infocomics/{param}', function ($param) {
     $series = config('db.series');
