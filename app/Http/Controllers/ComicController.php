@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Comic as Comic;
-
+use Illuminate\Support\Composer;
 
 class ComicController extends Controller
 {
@@ -74,7 +74,13 @@ class ComicController extends Controller
      */
     public function edit($id)
     {
-        //
+        $comic = Comic::findOrFail($id);
+        $links = config('db.links');
+        $data = [
+            'comic' => $comic,
+            "links" => $links
+        ];
+        return view('comics.edit', compact('comic', 'links'));
     }
 
     /**
@@ -86,7 +92,15 @@ class ComicController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = Comic::findOrFail($request->id);
+
+        if ($user->update($request->all()) === false) {
+            return response(
+                "Couldn't update the user with id {$request->id}",
+            );
+        }
+
+        return response($user);
     }
 
     /**
