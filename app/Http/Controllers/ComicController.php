@@ -20,7 +20,7 @@ class ComicController extends Controller
 
         $series = Comic::all();
 
-        return view('home', compact('series', 'links'));
+        return view('comics.index', compact('series', 'links'));
     }
 
     /**
@@ -52,7 +52,16 @@ class ComicController extends Controller
      */
     public function show($id)
     {
-        //
+        $comic = Comic::find($id);
+        $links = config('db.links');
+        if ($comic) {
+            $data = [
+                "comic" => $comic,
+                "links" => $links
+            ];
+            return view('comics.show', $data);
+        }
+        abort(404);
     }
 
     /**

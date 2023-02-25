@@ -22,17 +22,17 @@ use App\Models\Comic;
 //     return view('home', compact('series', 'links'));
 // });
 
-Route::get('/home', [ComicController::class, 'index'])->name('home');
+// Route::get('/home', [ComicController::class, 'index'])->name('home');
 
-// Route::resource('home', ComicController::class);
+Route::resource('comics', ComicController::class);
 
 Route::get('/', [PagesController::class, 'getHome'])->name('homepage');
 
 
 
-Route::get('/infocomics/{param}', function ($param) {
-    $series = Comic::all();
-    $links = config('db.links');
-    $single_comic = $series[$param];
-    return view('infocomics', compact('single_comic', 'links'));
-})->name('single');
+// Route::get('/infocomics/{param}', function ($param) {
+//     $series = Comic::all();
+//     $links = config('db.links');
+//     $single_comic = $series[$param];
+//     return view('infocomics', compact('single_comic', 'links'));
+// })->name('single');

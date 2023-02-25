@@ -1,9 +1,10 @@
+
 <div class="series">
     <div class="container-fluid">
         <div class="row">
             @foreach ($series as $key => $item)
             <div class="col-2">
-            <a href="{{route('single', ['param' => $key])}}">
+            <a href="{{route('comics.show', ['comic' => $item['id']])}}">
                 <img src="{{$item['thumb']}}" alt="{{$item['title']}}">
                 <div class="title">
                     {{$item['series']}}
@@ -14,7 +15,6 @@
         </div>
     </div>
 </div>
-
 
 
 

@@ -121,7 +121,7 @@ return [
         ],
         [
             "label" => 'COMICS',
-            "url" => 'home',
+            "url" => '/comics',
             "active" => true
         ],
         [
