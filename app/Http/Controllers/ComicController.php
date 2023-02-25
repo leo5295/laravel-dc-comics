@@ -90,17 +90,11 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Comic $comic)
     {
-        $user = Comic::findOrFail($request->id);
-
-        if ($user->update($request->all()) === false) {
-            return response(
-                "Couldn't update the user with id {$request->id}",
-            );
-        }
-
-        return response($user);
+        $data = $request->all();
+        $comic->update($data);
+        return redirect()->route('comics.show', $comic->id);
     }
 
     /**

@@ -22,19 +22,19 @@
         </div>
         <div class="mb-3">
             <label for="" class="form-label">Aggiungi serie</label>
-            <input value="{{ old('series') ?? $comic['title'] }}" type="text" class="form-control" id="" aria-describedby="" name="series">
+            <input value="{{ old('series') ?? $comic['series'] }}" type="text" class="form-control" id="" aria-describedby="" name="series">
         </div>
         <div class="mb-3">
             <label for="" class="form-label">Aggiungi comic di vendita</label>
-            <input value="{{ old('sale_date') ?? $comic['title'] }}" type="text" class="form-control" id="" aria-describedby="" name="sale_date">
+            <input value="{{ old('sale_date') ?? $comic['sale_date'] }}" type="text" class="form-control" id="" aria-describedby="" name="sale_date">
         </div>
         <div class="mb-3">
             <label for="" class="form-label">Aggiungi tipo</label>
-            <input value="{{ old('type') ?? $comic['title'] }}" type="text" class="form-control" id="" aria-describedby="" name="type">
+            <input value="{{ old('type') ?? $comic['type'] }}" type="text" class="form-control" id="" aria-describedby="" name="type">
         </div>
         <div class="mb-3">
             <label for="" class="form-label">Aggiungi link immagine</label>
-            <input value="{{ old('thumb') ?? $comic['title'] }}" type="text" class="form-control" id="" aria-describedby="" name="thumb">
+            <input value="{{ old('thumb') ?? $comic['thumb'] }}" type="text" class="form-control" id="" aria-describedby="" name="thumb">
         </div>
     
         <div class="form-group">
