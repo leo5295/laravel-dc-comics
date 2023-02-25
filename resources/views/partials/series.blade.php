@@ -12,6 +12,7 @@
             </a>
             </div>
             @endforeach
+            <a href="{{route('comics.create')}}">press</a>
         </div>
     </div>
 </div>
