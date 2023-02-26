@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Comic as Comic;
 use Illuminate\Support\Composer;
+use Illuminate\Support\Facades\Validator;
 
 class ComicController extends Controller
 {
@@ -42,7 +43,17 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        Comic::create($request->all());
+        $validatedData = $request->validate([
+            'title' => 'required|max:25',
+            'description' => 'nullable',
+            'thumb' => 'required|max:55',
+            'price' => 'required|date',
+            'series' => 'required|date',
+            'sale_date' => 'required|date',
+            'type' => 'nullable',
+        ]);
+        Comic::create($validatedData);
+        // Comic::create($request->all());
         return redirect('/comics');
     }
 
