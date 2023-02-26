@@ -103,8 +103,17 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        $data = $request->all();
-        $comic->update($data);
+        $validatedData = $request->validate([
+            'title' => 'required|max:25',
+            'description' => 'nullable',
+            'thumb' => 'required|max:255',
+            'price' => 'required|max:50',
+            'series' => 'required|max:88',
+            'sale_date' => 'required|date',
+            'type' => 'nullable',
+        ]);
+        // $data = $request->all();
+        $comic->update($validatedData);
         return redirect()->route('comics.show', $comic->id);
     }
 

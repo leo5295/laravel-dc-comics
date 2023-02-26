@@ -6,6 +6,17 @@
     <form action="{{route('comics.update', ['comic' => $comic['id']])}}" method="POST">
         @csrf
         @method('PUT')
+        <div>
+            @if($errors->any())
+            <ul class="text-danger">
+                @foreach ($errors->all() as $error)
+                <li>
+                    {{$error}}
+                </li>
+                @endforeach
+            </ul>
+            @endif
+        </div>
         <div class="mb-3">
           <label for="" class="form-label">Aggiungi title</label>
           <input value="{{ old('title') ?? $comic['title'] }}" type="text" class="form-control" id="" aria-describedby="" name="title">
@@ -25,7 +36,7 @@
             <input value="{{ old('series') ?? $comic['series'] }}" type="text" class="form-control" id="" aria-describedby="" name="series">
         </div>
         <div class="mb-3">
-            <label for="" class="form-label">Aggiungi comic di vendita</label>
+            <label for="" class="form-label">Aggiungi data di vendita</label>
             <input value="{{ old('sale_date') ?? $comic['sale_date'] }}" type="text" class="form-control" id="" aria-describedby="" name="sale_date">
         </div>
         <div class="mb-3">
