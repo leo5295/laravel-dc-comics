@@ -1,2 +1,4 @@
-@use 'partials/_header.scss' as *;
+@use 'partials/header.scss' as *;
+@use 'partials/footer.scss' as *;
+@use 'partials/jumbotron.scss' as *;
 @import '~bootstrap/scss/bootstrap'

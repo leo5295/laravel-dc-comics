@@ -23,8 +23,7 @@
         </div>
         <div class="mb-3">
             <label for="" class="form-label">Aggiungi descrizione</label>
-            <textarea rows="5" class="form-control" id="" aria-describedby="" name="description">
-                value="{{ old('description') ?? $comic['description'] }}"
+            <textarea rows="5" class="form-control" id="" aria-describedby="" name="description"  value="{{ old('description') ?? $comic['description'] }}">
             </textarea>
         </div>
         <div class="mb-3">

@@ -1,4 +1,3 @@
-
 <div class="series">
     <div class="container-fluid">
         <div class="row">
@@ -12,10 +11,11 @@
             </a>
             </div>
             @endforeach
-            <a href="{{route('comics.create')}}">press</a>
+            <a class="text-center" href="{{route('comics.create')}}">ADD</a>
         </div>
     </div>
 </div>
+
 
 
 

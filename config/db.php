@@ -115,6 +115,11 @@ return [
 
     "links" => [
         [
+            "label" => 'DC/HOME',
+            "url" => '/',
+            "active" => false
+        ],
+        [
             "label" => 'CHARACTERS',
             "url" => '#',
             "active" => false

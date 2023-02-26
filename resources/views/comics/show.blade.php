@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container-fluid show">
     <div class="row">
         <div class="col">
-            <img src="{{$comic['thumb']}}" alt="{{$comic['title']}}">
+            <img src="{{$comic['thumb']}}" alt="{{$comic['title']}}" class="py-3">
             <h1 class="title">
                 {{$comic['series']}}
             </h1>
