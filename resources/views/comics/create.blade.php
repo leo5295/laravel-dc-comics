@@ -14,8 +14,8 @@
                 </li>
                 @endforeach
             </ul>
+            @endif
         </div>
-        @endif
         <div class="mb-3">
           <label for="" class="form-label">Aggiungi title</label>
           <input type="text" class="form-control" id="" aria-describedby="" name="title">
